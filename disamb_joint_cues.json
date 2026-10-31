@@ -1,0 +1,32 @@
+{
+  "dataset": "disamb_joint_cues",
+  "description": "名称相似或相同的企业，需结合地区、成立年份、登记类型等线索识别",
+  "language": "zh",
+  "anonymised": true,
+  "records": [
+    {
+      "id": "D056",
+      "question": "汕头市潮南区【企业简称】里2020年成立的那家统一社会信用代码是多少",
+      "clue_type": "establishment_year",
+      "candidates": "汕头市潮南区【企业A】（汕头市潮南区）；汕头市潮南区【企业B】（汕头市潮南区）",
+      "expected_status": "resolved",
+      "gold_sql": "SELECT unified_social_credit_code FROM firms_lite WHERE enterprise_name = '汕头市潮南区【企业B】'"
+    },
+    {
+      "id": "D006",
+      "question": "佛山市佛山市【企业简称】里不是禅城区那家是哪家企业",
+      "clue_type": "negation_district",
+      "candidates": "佛山市【企业A】（佛山市南海区）；佛山市【企业B】（佛山市禅城区）",
+      "expected_status": "resolved",
+      "gold_sql": "SELECT enterprise_name FROM firms_lite WHERE enterprise_name = '佛山市【企业A】'"
+    },
+    {
+      "id": "D005",
+      "question": "佛山市【企业简称】里1991年成立的那家统一社会信用代码是多少",
+      "clue_type": "establishment_year",
+      "candidates": "佛山市【企业A】（佛山市南海区）；佛山市【企业B】（佛山市禅城区）",
+      "expected_status": "resolved",
+      "gold_sql": "SELECT unified_social_credit_code FROM firms_lite WHERE enterprise_name = '佛山市【企业B】'"
+    }
+  ]
+}

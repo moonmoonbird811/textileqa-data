@@ -1,0 +1,36 @@
+{
+  "dataset": "regular_single_entity",
+  "description": "请求某一家企业的属性，或做单实体条件/聚合/专利关联查询",
+  "language": "zh",
+  "anonymised": true,
+  "records": [
+    {
+      "id": "L1aug_001310",
+      "tag": "bool_has_patent",
+      "question": "【企业A】有专利吗？",
+      "gold_sql": "SELECT EXISTS(SELECT 1 FROM patents p WHERE p.enterprise_name='【企业A】')",
+      "gold_answer_count": 1
+    },
+    {
+      "id": "L1aug_000229",
+      "tag": "project_field",
+      "question": "佛山市【企业A】的经营范围是什么？",
+      "gold_sql": "SELECT business_scope FROM firms_lite WHERE enterprise_name='佛山市【企业A】'",
+      "gold_answer_count": 1
+    },
+    {
+      "id": "L1aug_000052",
+      "tag": "project_field",
+      "question": "查一下佛山市【企业A】的成立日期",
+      "gold_sql": "SELECT establishment_date FROM firms_lite WHERE enterprise_name='佛山市【企业A】'",
+      "gold_answer_count": 1
+    },
+    {
+      "id": "L1aug_000564",
+      "tag": "agg_group_type",
+      "question": "各企业类型分别有多少家？",
+      "gold_sql": "SELECT enterprise_type, COUNT(*) FROM firms_lite GROUP BY enterprise_type",
+      "gold_answer_count": 75
+    }
+  ]
+}

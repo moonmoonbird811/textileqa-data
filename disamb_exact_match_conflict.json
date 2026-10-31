@@ -1,0 +1,44 @@
+{
+  "dataset": "disamb_exact_match_conflict",
+  "description": "一个字被替换后恰好精确匹配另一家真实企业，需在匹配后核验属性冲突",
+  "language": "zh",
+  "anonymised": true,
+  "records": [
+    {
+      "id": "V2070",
+      "question": "汕头市潮阳区【企业B】里2012年成立的那家统一社会信用代码是多少",
+      "note": "企业B 是写错后恰好与之同名的另一家真实企业；真实目标为企业A",
+      "attributes_entity_B": "city：汕头市；district：潮阳区；enterprise_type：个人独资企业；establishment_date：2015-05-28；business_scope：生产、销售：针织品。(依法须经批准的项目，经相关部门批准后方可开展经营活动)",
+      "attributes_entity_A": "city：汕头市；district：潮阳区；enterprise_type：个人独资企业；establishment_date：2012-07-25；business_scope：一般项目：针纺织品及原料销售；服装制造；服饰制造；针纺织品销售；互联网销售（除销售需要许可的商品）。",
+      "conflict_clue": {
+        "field": "establishment_year",
+        "value": "2012"
+      },
+      "expected_status": "resolved"
+    },
+    {
+      "id": "V0109",
+      "question": "佛山市【企业B】里在南海区的那家统一社会信用代码是多少",
+      "note": "企业B 是写错后恰好与之同名的另一家真实企业；真实目标为企业A",
+      "attributes_entity_B": "city：佛山市；district：禅城区；enterprise_type：有限责任公司(自然人独资)；establishment_date：2023-04-24；business_scope：一般项目：面料纺织加工；针纺织品及原料销售；国内贸易代理。（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）",
+      "attributes_entity_A": "city：佛山市；district：南海区；enterprise_type：有限责任公司(自然人投资或控股)；establishment_date：2023-07-20；business_scope：一般项目：针纺织品销售；面料纺织加工；针织或钩针编织物及其制品制造；互联网销售（除销售需要许可的商品）；服装辅料制造；服",
+      "conflict_clue": {
+        "field": "district",
+        "value": "南海区"
+      },
+      "expected_status": "resolved"
+    },
+    {
+      "id": "V2299",
+      "question": "江门市新会区【企业B】里登记类型是有限责任公司(自然人投资或控股)的那家统一社会信用代码是多少",
+      "note": "企业B 是写错后恰好与之同名的另一家真实企业；真实目标为企业A",
+      "attributes_entity_B": "city：江门市；district：新会区；enterprise_type：其他有限责任公司；establishment_date：2018-07-20；business_scope：加工、生产、销售：毛纱、毛线、服装、纺织品。（依法须经批准的项目，经相关部门批准后方可开展经营活动）〓",
+      "attributes_entity_A": "city：江门市；district：新会区；enterprise_type：有限责任公司(自然人投资或控股)；establishment_date：2007-08-13；business_scope：生产、销售：纺织品。（依法须经批准的项目，经相关部门批准后方可开展经营活动）〓",
+      "conflict_clue": {
+        "field": "enterprise_type",
+        "value": "有限责任公司(自然人投资或控股)"
+      },
+      "expected_status": "resolved"
+    }
+  ]
+}

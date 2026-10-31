@@ -1,0 +1,41 @@
+{
+  "dataset": "disamb_character_deletion",
+  "description": "企业名称缺失一个字，需从候选中恢复并核验",
+  "language": "zh",
+  "anonymised": true,
+  "records": [
+    {
+      "id": "D0048",
+      "question": "【企业A′】里在黄埔区的那家统一社会信用代码是多少",
+      "note": "企业A′ 为企业A 缺失一个字的写法",
+      "conflict_clue": {
+        "field": "district",
+        "value": "黄埔区"
+      },
+      "expected_status": "resolved",
+      "recall_pool_size": 30
+    },
+    {
+      "id": "D0112",
+      "question": "【企业A′】里在海珠区的那家统一社会信用代码是多少",
+      "note": "企业A′ 为企业A 缺失一个字的写法",
+      "conflict_clue": {
+        "field": "district",
+        "value": "海珠区"
+      },
+      "expected_status": "resolved",
+      "recall_pool_size": 30
+    },
+    {
+      "id": "D0120",
+      "question": "佛山市【企业A′】里2018年成立的那家统一社会信用代码是多少",
+      "note": "企业A′ 为企业A 缺失一个字的写法",
+      "conflict_clue": {
+        "field": "establishment_year",
+        "value": "2018"
+      },
+      "expected_status": "resolved",
+      "recall_pool_size": 30
+    }
+  ]
+}

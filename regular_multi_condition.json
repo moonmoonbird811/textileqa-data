@@ -1,0 +1,36 @@
+{
+  "dataset": "regular_multi_condition",
+  "description": "对经营范围关键词做交集、并集、差集",
+  "language": "zh",
+  "anonymised": true,
+  "records": [
+    {
+      "id": "L2aug_000486",
+      "tag": "intersect",
+      "question": "既做布料又做钩针编织物的企业有哪些？",
+      "gold_sql": "SELECT DISTINCT enterprise_name FROM firms_lite WHERE business_scope LIKE '%布料%' AND business_scope LIKE '%钩针编织物%'",
+      "gold_answer_count": 17
+    },
+    {
+      "id": "L2aug_000475",
+      "tag": "union",
+      "question": "做运动服装或者毛衣的企业有哪些",
+      "gold_sql": "SELECT DISTINCT enterprise_name FROM firms_lite WHERE business_scope LIKE '%运动服装%' OR business_scope LIKE '%毛衣%'",
+      "gold_answer_count": 106
+    },
+    {
+      "id": "L2aug_000066",
+      "tag": "diff",
+      "question": "搞印染加工却不搞无纺布的公司",
+      "gold_sql": "SELECT DISTINCT enterprise_name FROM firms_lite WHERE business_scope LIKE '%印染加工%' AND NOT (business_scope LIKE '%无纺布%')",
+      "gold_answer_count": 1607
+    },
+    {
+      "id": "L2aug_000210",
+      "tag": "diff",
+      "question": "做家纺但不做棉纱的企业",
+      "gold_sql": "SELECT DISTINCT enterprise_name FROM firms_lite WHERE business_scope LIKE '%家纺%' AND NOT (business_scope LIKE '%棉纱%')",
+      "gold_answer_count": 59
+    }
+  ]
+}

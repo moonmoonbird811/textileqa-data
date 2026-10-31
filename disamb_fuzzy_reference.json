@@ -1,0 +1,29 @@
+{
+  "dataset": "disamb_fuzzy_reference",
+  "description": "用不完整称呼代替规范名称；线索不足时应保持\"歧义未解决\"",
+  "language": "zh",
+  "anonymised": true,
+  "records": [
+    {
+      "id": "T035",
+      "question": "汕头市潮南区【企业简称】里2020年成立的那家统一社会信用代码是多少",
+      "corruption_type": "abbreviation_collision",
+      "possible_enterprises": "汕头市潮南区【企业A】",
+      "expected_status": "resolved"
+    },
+    {
+      "id": "T006",
+      "question": "【企业简称】里2021年成立的那家统一社会信用代码是多少",
+      "corruption_type": "abbreviation_collision",
+      "possible_enterprises": "【企业A】",
+      "expected_status": "resolved"
+    },
+    {
+      "id": "T038",
+      "question": "帮我查一下【企业简称】里2014年成立的那家的注册地址",
+      "corruption_type": "abbreviation_collision",
+      "possible_enterprises": "【企业A】",
+      "expected_status": "resolved"
+    }
+  ]
+}
